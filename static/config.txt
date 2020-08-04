@@ -1,0 +1,11 @@
+#!/bin/bash
+yum update -y
+yum install -y httpd
+yum install -y wget
+chkconfig httpd on
+cd /var/www/html
+wget wget https://github.com/IVVM20/AWS_Course_Applications/archive/master.zip
+cd ./AWS_Course_Applications-master
+unzip ./master.zip
+cp -a ./AWS_app_static-master/static/. /var/www/html/
+service httpd start

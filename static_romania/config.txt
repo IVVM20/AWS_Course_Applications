@@ -1,0 +1,17 @@
+#!/bin/bash
+yum update -y
+yum install -y httpd wget php git
+
+chkconfig httpd on
+cd /var/www/html
+wget https://github.com/IVVM20/AWS_Course_Applications/archive/master.zip
+unzip ./master.zip
+cp -a ./AWS_Course_Applications-master/static_romania/. /var/www/html/
+mv /var/www/html/htaccess /var/www/html/.htaccess
+
+service httpd start
+sudo systemctl enable httpd
+sudo usermod -a -G apache ec2-user
+sudo chown -R ec2-user:apache /var/www
+sudo chmod 2775 /var/www && find /var/www -type d -exec sudo chmod 2775 {} \;
+find /var/www -type f -exec sudo chmod 0664 {} \;
