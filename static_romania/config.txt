@@ -13,7 +13,7 @@ mkdir /var/www/html/romania
 cp /var/www/html/.htaccess /var/www/html/romania
 cp /var/www/html/index.php /var/www/html/romania
 cp -r /var/www/html/resources /var/www/html/romania
-cp -r /var/www/html/vendors /var/www/html/vendors
+cp -r /var/www/html/vendors /var/www/html/romania
 
 service httpd start
 sudo systemctl enable httpd
