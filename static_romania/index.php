@@ -25,6 +25,7 @@
 				<li><a href="#features">Retete</a></li>
 				<li><a href="#works">Cum Comanzi</a></li>
 				<li><a href="#plans">Sign up</a></li>
+				<li><a href="#">Locatie: Bucuresti</a></li>
 				<li><a href="#">AZ: <?php
 						    $aws_az = file_get_contents('http://169.254.169.254/latest/meta-data/placement/availability-zone');
 						    echo $aws_az;
