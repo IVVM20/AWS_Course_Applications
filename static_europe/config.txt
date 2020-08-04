@@ -9,6 +9,12 @@ unzip ./master.zip
 cp -a ./AWS_Course_Applications-master/static_europe/. /var/www/html/
 mv /var/www/html/htaccess /var/www/html/.htaccess
 
+mkdir /var/www/html/europe
+cp /var/www/html/.htaccess /var/www/html/europe
+cp /var/www/html/index.php /var/www/html/europe
+cp -r /var/www/html/resources /var/www/html/europe
+cp -r /var/www/html/vendors /var/www/html/europe
+
 service httpd start
 sudo systemctl enable httpd
 sudo usermod -a -G apache ec2-user
